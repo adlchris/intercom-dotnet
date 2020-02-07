@@ -24,7 +24,6 @@ steps:
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
-    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
@@ -38,6 +37,7 @@ steps:
     command: 'pack'
     packagesToPack: 'src/Intercom/Intercom.csproj'
     versioningScheme: 'off'
+    includeSymbols: true
 
 - task: NuGetCommand@2
   inputs:
