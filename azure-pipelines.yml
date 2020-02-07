@@ -39,7 +39,7 @@ steps:
   inputs:
       command: 'pack'
       packagesToPack: 'src/Intercom/Intercom.csproj'
-      includesymbols: true
+      includesymbols: false
       versioningScheme: 'off'
     
 - task: DotNetCoreCLI@2
